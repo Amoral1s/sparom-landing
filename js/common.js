@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-  if(window.width() <= 992) {
+  if($(window).width() <= 992) {
     $('.video').remove();
   } else {
     $('.video div').on('click', function() {
