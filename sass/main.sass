@@ -41,8 +41,342 @@
   div
     font-size: 16px
     line-height: 1.6
-      
-	
+
+
+
+.quiz
+  padding-top: 70px
+  padding-bottom: 70px
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  background-color: #fff
+  width: 100%
+  height: 100%
+  overflow-y: auto
+  display: none
+  input[type="submit"]
+    display: none
+  .load
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    div
+      width: 256px
+      display: block
+      height: 5px
+      background-color: $light
+      margin-bottom: 15px
+      position: relative
+      border-radius: 5px
+      overflow: hidden
+      &::after
+        position: absolute
+        content: ''
+        width: 20%
+        height: 5px
+        top: 0
+        left: 0
+        background-color: $main
+        border-radius: 5px 0 0 5px
+  .button
+    background-color: $main
+    width: 135px
+    height: 49px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 18px
+    font-weight: 600
+    text-align: center
+    transition: .2s
+    border-radius: 10px
+    box-shadow: 0px 4px 37px rgba(252, 206, 16, 0.44)
+    cursor: pointer
+    margin-right: 65px
+    &:hover
+      transition: .2s
+      transform: scale(1.1)
+    &.prev
+      background-color: #F7F7F7
+      box-shadow: none
+  h3
+    font-size: 24px
+    margin-bottom: 50px
+  &-step-one
+    &-btn
+      margin-top: 50px
+      display: flex
+      align-items: center
+    &-intro
+      padding: 25px
+      display: flex
+      align-items: center
+      border: 1px solid $main
+      border-radius: 10px
+      width: max-content
+      margin-bottom: 40px
+    &-row
+      display: flex
+      justify-content: flex-start
+      align-items: flex-start
+      input
+        display: none
+      label
+        margin-right: 50px
+        cursor: pointer
+        transition: .2s
+        
+        &:hover
+          transform: scale(1.05)
+          transition: .2s
+        img
+          display: block
+          margin-bottom: 15px
+        p
+          font-size: 18px
+          font-weight: 600
+  &-step-two
+    &-wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: stretch
+      max-width: calc(286px * 3)
+      &-item
+        margin-right: 20px
+        width: 265px     
+        margin-bottom: 30px
+        label
+          cursor: pointer
+          transition: .2s
+          display: block
+          &:hover
+            transform: scale(1.05)
+            transition: .2s
+          img
+            display: block
+            margin-bottom: 15px
+          p
+            font-size: 18px
+            font-weight: 600
+        input[type="radio"]
+          display: none 
+    &-btn
+      display: flex
+      align-items: flex-end
+      flex-direction: column
+      align-items: flex-start
+      margin: 0
+      margin-top: 95px
+      .load
+        div
+          &::after
+            width: 40%
+      .btns
+        display: flex
+        margin-bottom: 50px
+      .button
+        margin-right: 20px
+  &-step-three
+    h3
+      max-width: 650px
+    &-btn
+      display: flex
+      align-items: center
+      margin-top: 35px
+      flex-direction: column
+      align-items: flex-start
+      .load
+        div
+          &::after
+            width: 60%
+      .btns
+        display: flex
+        margin-bottom: 50px
+      .button
+        margin-right: 20px
+    &-city
+      display: block
+      label
+        color: #898989
+        font-size: 18px
+        margin-bottom: 5px
+        display: block
+      input
+        width: 100%
+        max-width: 650px
+  &-step-four
+    &-btn
+      display: flex
+      align-items: center
+      margin-top: 45px
+      flex-direction: column
+      align-items: flex-start
+      .btns
+        display: flex
+        margin-bottom: 50px
+      .load
+        div
+          &::after
+            width: 80%
+      .button
+        margin-right: 20px
+        
+    &-wrap
+      display: block
+      label
+        display: flex
+        align-items: center
+        margin-bottom: 15px
+        cursor: pointer
+        &:hover
+          div
+            &::after
+              transition: .3s
+              opacity: 1
+        div
+          height: 26px
+          width: 26px
+          border: 1px solid #898989
+          border-radius: 100%
+          cursor: pointer
+          position: relative
+          &::after
+            position: absolute
+            content: ''
+            height: 13px
+            width: 13px
+            background-color: $main
+            top: 50%
+            left: 50%
+            border-radius: 100%
+            transform: translate(-50%, -50%)
+            opacity: 0
+            transition: .3s
+        input[type="radio"]
+          display: none
+          &:checked
+            &+div
+              &::after
+                opacity: 1
+                transition: .3s
+              
+        p
+          margin-left: 20px
+  &-step-five
+    &-btn
+      display: flex
+      align-items: center
+      margin-top: 45px
+      flex-direction: column
+      align-items: flex-start
+      .btns
+        display: flex
+        margin-bottom: 50px
+        margin-right: 20px
+      .load
+        div
+          &::after
+            width: 100%
+    &-wrap
+      display: block
+      label
+        display: flex
+        align-items: center
+        margin-bottom: 15px
+        cursor: pointer
+        &:hover
+          div
+            &::after
+              transition: .3s
+              opacity: 1
+        div
+          height: 26px
+          width: 26px
+          border: 1px solid #898989
+          border-radius: 100%
+          cursor: pointer
+          position: relative
+          &::after
+            position: absolute
+            content: ''
+            height: 13px
+            width: 13px
+            background-color: $main
+            top: 50%
+            left: 50%
+            border-radius: 100%
+            transform: translate(-50%, -50%)
+            opacity: 0
+            transition: .3s
+        input[type="radio"]
+          display: none
+          &:checked
+            &+div
+              &::after
+                opacity: 1
+                transition: .3s
+       
+              
+        p
+          margin-left: 20px
+  &-step-wap
+    h3
+      margin-bottom: 90px
+    &-wrap
+      display: block
+      input
+        max-width: 420px
+      label
+        color: #898989
+        font-size: 18px
+        margin-bottom: 5px
+        display: block
+    &-btn
+      display: flex
+      align-items: center
+      margin-top: 60px
+      flex-direction: column
+      align-items: flex-start
+      .btns
+        display: flex
+        margin-bottom: 50px
+      .button
+        margin-right: 20px
+  &-step-tel
+    &-wrap
+      display: block
+      input
+        max-width: 420px
+      label
+        color: #898989
+        font-size: 18px
+        margin-bottom: 5px
+        display: block
+    h3
+      margin-bottom: 90px
+    &-btn
+      display: flex
+      align-items: center
+      margin-top: 60px
+      flex-direction: column
+      align-items: flex-start
+      .btns
+        display: flex
+        margin-bottom: 50px
+      .button
+        margin-right: 20px
+     
+
+
+
+
+
+
+
 @import "main/_media1200"
 @import "main/_media992"
 @import "main/_media768"
