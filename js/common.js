@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
   $('.act-h').text(pad(now.getHours()));
   $('.act-min').text(pad(now.getMinutes()));
   if (datePlus > 31) {
-    $('.day-text').text('1');
+    $('.day-text').text('3');
     $('.month-text').text(month[now.getMonth() + 1]);
   } else {
     $('.day-text').text(datePlus);
