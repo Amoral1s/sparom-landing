@@ -1,16 +1,105 @@
 jQuery(document).ready(function ($) {
 
+  $('.video div').on('click', function() {
+    $(this).fadeOut(200);
+    $(this).prev().fadeIn(200);
+  });
+
   if(screen.width <= 992) {
-    $('.video').remove();
+    $('.video').hide();
+    $('.slider-out').fotorama({
+      width: '100%',
+      maxwidth: '100%',
+      ratio: 16/9,
+      allowfullscreen: true,
+      nav: 'thumbs',
+      fit: 'cover',
+      arrows: true,
+      thumbwidth: 65,
+      thumbheight: 50,
+      thumbmargin: 10,
+    });
+    $('.slider-inner').fotorama({
+      width: '100%',
+      maxwidth: '100%',
+      ratio: 16/9,
+      allowfullscreen: true,
+      nav: 'thumbs',
+      fit: 'cover',
+      arrows: true,
+      thumbwidth: 65,
+      thumbheight: 50,
+      thumbmargin: 10,
+    });
   } else {
-    $('.video div').on('click', function() {
-      $(this).fadeOut(0);
-      $('.video iframe').fadeIn(0);
+    
+    $('.slider-out').fotorama({
+      width: '100%',
+      maxwidth: '100%',
+      ratio: 16/9,
+      allowfullscreen: true,
+      nav: 'thumbs',
+      fit: 'cover',
+      arrows: true,
+      thumbwidth: 170,
+      thumbheight: 120,
+      thumbmargin: 20,
+    });
+    $('.slider-inner').fotorama({
+      width: '100%',
+      maxwidth: '100%',
+      ratio: 16/9,
+      allowfullscreen: true,
+      nav: 'thumbs',
+      fit: 'cover',
+      arrows: true,
+      thumbwidth: 170,
+      thumbheight: 120,
+      thumbmargin: 20,
     });
   }
-  
-  
 
+  $('.sert img').on('click', function() {
+    $('.overlay').fadeIn(200);
+    $('.popup-img').fadeIn(200);
+    $('.popup-img img').attr('src', $(this).attr('src'));
+  });
+
+  $('.close').on('click', function() {
+    $('.overlay').fadeOut(200);
+    $('.popup-img').fadeOut(200);
+  });
+  $('.popup-img').on('click', function() {
+    $('.overlay').fadeOut(200);
+    $('.popup-img').fadeOut(200);
+  });
+
+  //out
+  
+  
+  //youtube
+  
+  
+  //thanks date
+  const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  let now = new Date();
+
+  let datePlus = +now.getDate() + 1;
+    
+  function pad(num) {
+    return ("0" + parseInt(num)).substr(-2);
+  }
+  $('.act-h').text(pad(now.getHours()));
+  $('.act-min').text(pad(now.getMinutes()));
+  if (datePlus > 31) {
+    $('.day-text').text('1');
+    $('.month-text').text(month[now.getMonth() + 1]);
+  } else {
+    $('.day-text').text(datePlus);
+    $('.month-text').text(month[now.getMonth()]);
+  }
+
+  //TIMER
   (function() {
     var start = new Date;
     start.setHours(0, 0, 0); // 11pm
