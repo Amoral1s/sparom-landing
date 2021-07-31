@@ -108,6 +108,16 @@
   display: none;
 }
 
+.quiz-close {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  color: #000;
+  font-size: 50px;
+  z-index: 100;
+  cursor: pointer;
+}
+
 .quiz .load {
   display: -webkit-box;
   display: -webkit-flex;
@@ -150,7 +160,7 @@
 
 .quiz .button {
   background-color: #FCCE10;
-  width: 135px;
+  width: 122px;
   height: 49px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -254,12 +264,20 @@
   -webkit-transition: .2s;
   -o-transition: .2s;
   transition: .2s;
+  border: 2px solid rgba(0, 0, 0, 0);
+  -webkit-border-radius: 13px;
+          border-radius: 13px;
+  overflow: hidden;
+}
+
+.quiz-step-one-row label.checked {
+  border: 2px solid #FCCE10;
 }
 
 .quiz-step-one-row label:hover {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-transition: .2s;
   -o-transition: .2s;
   transition: .2s;
@@ -273,6 +291,8 @@
 .quiz-step-one-row label p {
   font-size: 18px;
   font-weight: 600;
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 
 .quiz-step-two-wrap {
@@ -299,6 +319,25 @@
   margin-right: 20px;
   width: 265px;
   margin-bottom: 30px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  -webkit-border-radius: 13px;
+          border-radius: 13px;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+}
+
+.quiz-step-two-wrap-item.checked {
+  border: 2px solid #FCCE10;
+}
+
+.quiz-step-two-wrap-item:hover {
+  -webkit-transform: scale(1.01);
+      -ms-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
 }
 
 .quiz-step-two-wrap-item label {
@@ -309,15 +348,6 @@
   display: block;
 }
 
-.quiz-step-two-wrap-item label:hover {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s;
-}
-
 .quiz-step-two-wrap-item label img {
   display: block;
   margin-bottom: 15px;
@@ -326,6 +356,8 @@
 .quiz-step-two-wrap-item label p {
   font-size: 18px;
   font-weight: 600;
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 
 .quiz-step-two-wrap-item input[type="radio"] {
@@ -1271,7 +1303,7 @@
     font-size: 14px;
   }
   .quiz {
-    padding-top: 30px;
+    padding-top: 60px;
     padding-bottom: 30px;
   }
   .quiz .button {
@@ -1604,18 +1636,7 @@
     max-width: 100%;
   }
   .sert-right-img {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .sert-right-img img {
-    margin: 0;
-    width: 45%;
+    display: none;
   }
   .out .fotorama__arr {
     height: 25px;

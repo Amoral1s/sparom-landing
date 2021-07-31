@@ -59,6 +59,14 @@
   display: none
   input[type="submit"]
     display: none
+  &-close
+    position: absolute
+    top: 0px
+    right: 15px
+    color: #000
+    font-size: 50px
+    z-index: 100
+    cursor: pointer
   .load
     display: flex
     flex-direction: column
@@ -83,7 +91,7 @@
         border-radius: 5px 0 0 5px
   .button
     background-color: $main
-    width: 135px
+    width: 122px
     height: 49px
     display: flex
     justify-content: center
@@ -128,9 +136,13 @@
         margin-right: 50px
         cursor: pointer
         transition: .2s
-        
+        border: 2px solid rgba(#000, 0)
+        border-radius: 13px
+        overflow: hidden
+        &.checked
+          border: 2px solid $main
         &:hover
-          transform: scale(1.05)
+          transform: scale(1.01)
           transition: .2s
         img
           display: block
@@ -138,6 +150,8 @@
         p
           font-size: 18px
           font-weight: 600
+          padding-bottom: 15px
+          padding-left: 10px
   &-step-two
     &-wrap
       display: flex
@@ -149,19 +163,27 @@
         margin-right: 20px
         width: 265px     
         margin-bottom: 30px
+        border: 2px solid rgba(#000, 0)
+        border-radius: 13px
+        transition: .2s
+        &.checked
+          border: 2px solid $main
+        &:hover
+          transform: scale(1.01)
+          transition: .2s
         label
           cursor: pointer
           transition: .2s
           display: block
-          &:hover
-            transform: scale(1.05)
-            transition: .2s
+          
           img
             display: block
             margin-bottom: 15px
           p
             font-size: 18px
             font-weight: 600
+            padding-bottom: 15px
+            padding-left: 10px
         input[type="radio"]
           display: none 
     &-btn

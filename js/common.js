@@ -4,6 +4,11 @@ jQuery(document).ready(function ($) {
     $(this).fadeOut(200);
     $(this).prev().fadeIn(200);
   });
+  $('.quiz-close').on('click', function() {
+    $('.quiz').fadeOut(300);
+    $('body').css('overflow-y', 'auto');
+    $('html').css('overflow-y', 'auto');
+  });
 
   if(screen.width <= 992) {
     $('.video').hide();
@@ -144,35 +149,47 @@ jQuery(document).ready(function ($) {
   });
   //шаг 1
   $('input[name="step-one"]').on('change', function() {
-    $('.quiz-step-one').fadeOut(0);
-    $('.quiz-step-two').fadeIn(0);
+    $('input[name="step-one"]').parent().removeClass('checked');
+    $(this).parent().addClass('checked');
+    setTimeout(() => {
+      $('.quiz-step-one').fadeOut(100);
+      $('.quiz-step-two').fadeIn(200);
+    }, 500);
   });
   $('.quiz-step-one-btn .button').on('click', function() {
     if ($('input[name="step-one"]:checked').val() == undefined) {
       alert('Выберите что нибудь и повторите попытку!');
     } else {
-      $('.quiz-step-one').fadeOut(0);
-      $('.quiz-step-two').fadeIn(0);
+      setTimeout(() => {
+        $('.quiz-step-one').fadeOut(100);
+      $('.quiz-step-two').fadeIn(200);
+      }, 500);
     }
   });
 
   //шаг 2
   $('input[name="step-two"]').on('change', function() {
-    $('.quiz-step-two').fadeOut(0);
-    $('.quiz-step-three').fadeIn(0);
+    $('input[name="step-two"]').parent().removeClass('checked');
+    $(this).parent().addClass('checked');
+    setTimeout(() => {
+      $('.quiz-step-two').fadeOut(100);
+    $('.quiz-step-three').fadeIn(200);
+    }, 500);
   });
   
   $('.quiz-step-two-btn .next').on('click', function() {
     if ($('input[name="step-two"]:checked').val() == undefined) {
       alert('Выберите что нибудь и повторите попытку!');
     } else {
-      $('.quiz-step-two').fadeOut(0);
-      $('.quiz-step-three').fadeIn(0);
+     setTimeout(() => {
+      $('.quiz-step-two').fadeOut(100);
+      $('.quiz-step-three').fadeIn(200);
+     }, 500);
     }
   });
   $('.quiz-step-two-btn .prev').on('click', function() {
-    $('.quiz-step-two').fadeOut(0);
-    $('.quiz-step-one').fadeIn(0);
+    $('.quiz-step-two').fadeOut(100);
+    $('.quiz-step-one').fadeIn(200);
   });
   
   //шаг 3
@@ -180,53 +197,75 @@ jQuery(document).ready(function ($) {
     if ($('.quiz-step-three-city input').val() == '') {
       alert('Заполните поле и повторите попытку!');
     } else {
-      $('.quiz-step-three').fadeOut(0);
-      $('.quiz-step-four').fadeIn(0);
+      setTimeout(() => {
+        $('.quiz-step-three').fadeOut(100);
+      $('.quiz-step-four').fadeIn(200);
+      }, 500);
     }
     
   });
   $('.quiz-step-three-btn .prev').on('click', function() {
-    $('.quiz-step-three').fadeOut(0);
-    $('.quiz-step-two').fadeIn(0);
+      $('.quiz-step-three').fadeOut(100);
+    $('.quiz-step-two').fadeIn(200);
   });
   //шаг 4
   $('input[name="quiz-step-4"]').on('change', function() {
-    $('.quiz-step-four').fadeOut(0);
-    $('.quiz-step-five').fadeIn(0);
+    $('input[name="quiz-step-4"]').parent().removeClass('checked');
+    $(this).parent().addClass('checked');
+    setTimeout(() => {
+      $('.quiz-step-four').fadeOut(100);
+    $('.quiz-step-five').fadeIn(200);
+    }, 500);
   });
   $('.quiz-step-four-btn .next').on('click', function() {
     if ($('input[name="quiz-step-4"]:checked').val() == undefined) {
       alert('Выберите что нибудь и повторите попытку!');
     } else {
-      $('.quiz-step-four').fadeOut(0);
-      $('.quiz-step-five').fadeIn(0);
+      setTimeout(() => {
+        $('.quiz-step-four').fadeOut(100);
+      $('.quiz-step-five').fadeIn(200);
+      }, 500);
     }
     
   });
   $('.quiz-step-four-btn .prev').on('click', function() {
-    $('.quiz-step-four').fadeOut(0);
-    $('.quiz-step-three').fadeIn(0);
+      $('.quiz-step-four').fadeOut(100);
+      $('.quiz-step-three').fadeIn(200);
   });
 
 
   //шаг 5
+  $('input[name="quiz-step-5"]').on('change', function() {
+    $('input[name="quiz-step-5"]').parent().removeClass('checked');
+    $(this).parent().addClass('checked');
+    setTimeout(() => {
+      $('.quiz-step-five').fadeOut(100);
+      if ($('input[name="quiz-step-5"]:checked').val() == 1) {
+        $('.quiz-step-wap').fadeIn(200);
+      } else {
+        $('.quiz-step-tel').fadeIn(200);
+      }
+    }, 500);
+  });
   $('.quiz-step-five-btn .next').on('click', function() {
     
     if ($('input[name="quiz-step-5"]:checked').val() == undefined) {
       alert('Выберите что нибудь и повторите попытку!');
     } else {
-      $('.quiz-step-five').fadeOut(0);
+      setTimeout(() => {
+        $('.quiz-step-five').fadeOut(100);
       if ($('input[name="quiz-step-5"]:checked').val() == 1) {
-        $('.quiz-step-wap').fadeIn(0);
+        $('.quiz-step-wap').fadeIn(200);
       } else {
-        $('.quiz-step-tel').fadeIn(0);
+        $('.quiz-step-tel').fadeIn(200);
       }
+      }, 500);
     }
     
   });
   $('.quiz-step-five-btn .prev').on('click', function() {
-    $('.quiz-step-five').fadeOut(0);
-    $('.quiz-step-four').fadeIn(0);
+      $('.quiz-step-five').fadeOut(100);
+    $('.quiz-step-four').fadeIn(200);
   });
 
   //ватсап
@@ -234,16 +273,16 @@ jQuery(document).ready(function ($) {
     $('#quiz-submit').trigger('click');
   });
   $('.quiz-step-wap-btn .prev').on('click', function() {
-    $('.quiz-step-wap').fadeOut(0);
-    $('.quiz-step-five').fadeIn(0);
+      $('.quiz-step-wap').fadeOut(100);
+      $('.quiz-step-five').fadeIn(200);
   });
   //телефон
   $('.quiz-step-tel-btn .next').on('click', function() {
     $('#quiz-submit').trigger('click');
   });
   $('.quiz-step-tel-btn .prev').on('click', function() {
-    $('.quiz-step-tel').fadeOut(0);
-    $('.quiz-step-five').fadeIn(0);
+      $('.quiz-step-tel').fadeOut(100);
+    $('.quiz-step-five').fadeIn(200);
   });
   //сабмит
   $('#quiz-submit').on('click', function() {
