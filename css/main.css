@@ -795,10 +795,23 @@
   padding: 10px;
   margin-top: 20px;
   cursor: pointer;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
 }
 
 .youtube-title-right-btn p {
   margin-left: 20px;
+}
+
+.youtube-title-right-btn:hover {
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+  color: #fff;
 }
 
 .youtube-title-right-left {

@@ -396,13 +396,19 @@
         padding: 10px
         margin-top: 20px
         cursor: pointer
+        transition: .2s
         p
           margin-left: 20px
+        &:hover
+          transition: .2s
+          transform: scale(1.05)
+          color: #fff
       &-left
         width: 68px
       &-right
         width: calc(100% - 68px)
         padding-left: 15px
+        
         b
           font-size: 18px
           text-transform: uppercase
